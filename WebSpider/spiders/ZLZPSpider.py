@@ -18,10 +18,16 @@ def parse_job(response):
             '//p[@class="company-name-t"]/a/text()'
         ).extract()[0]
         item['company_name'] = test
-
-        item['company_welfare'] = response.xpath(
+        welfares = response.xpath(
             '//div[@class="welfare-tab-box"]/span/text()'
         ).extract()
+        welfare = ''
+        if len(welfares) > 0:
+            for i in welfares:
+                welfare = welfare + i + ','
+            item['company_welfare'] = welfare
+        elif len(welfare) == 0:
+            item['company_welfare'] = None
         item['job_pay'] = response.xpath(
             '//ul[@class="terminal-ul clearfix"]/li[1]/strong/text()'
         ).re('(\d+-*\d+元)')[0]
@@ -31,8 +37,15 @@ def parse_job(response):
         item['job_min_edu'] = response.xpath(
             '//ul[@class="terminal-ul clearfix"]/li[6]/strong/text()'
         ).extract()[0]
-        desc = response.xpath('//div[@class="tab-inner-cont"][1]/p/text()').extract()
-        item['job_dec'] = desc
+        desc_list = response.xpath('//div[@class="tab-inner-cont"][1]/p/text()').extract()
+        if len(desc_list) > 0:
+            desc = ''
+            for i in desc_list:
+                desc += i
+            item['job_dec'] = desc
+        elif len(desc_list) == 0:
+            item['job_dec'] = None
+
         # todo: 公司介绍没法完全匹配
         item['company_size'] = response.xpath(
             '//ul[@class="terminal-ul clearfix terminal-company mt20"]/li[1]/strong/text()'

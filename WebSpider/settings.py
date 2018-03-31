@@ -8,7 +8,12 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-
+# Mysql数据库的配置信息
+MYSQL_HOST = '127.0.0.1'
+MYSQL_DBNAME = 'mydatabase'  # 数据库名字，请修改
+MYSQL_USER = 'root'  # 数据库账号，请修改
+MYSQL_PASSWD = 'xiongmysql'  # 数据库密码，请修改
+MYSQL_PORT = 3306  # 数据库端口，在dbhelper中使用
 
 BOT_NAME = 'WebSpider'
 
