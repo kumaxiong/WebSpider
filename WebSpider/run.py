@@ -5,6 +5,6 @@
 
 from scrapy import cmdline
 
-name = 'neitui'
+name = 'liepin'
 cmd = 'scrapy crawl {0}'.format(name)
 cmdline.execute(cmd.split())
