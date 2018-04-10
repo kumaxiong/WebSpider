@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import re
 from scrapy import Request
 from scrapy.spiders import Spider
 from WebSpider.items import JobItem
@@ -19,21 +20,34 @@ class Job51Spider(Spider):
     def parse(self, response):
         jobs = response.xpath("//div[@class='el']/p/span/a/@href").extract()
         for job in jobs:
-            yield Request(job, callback=self.parse_job, headers=self.headers)
+            item = JobItem()
+            for field in item.fields:
+                item[field] = None
+            item['job_url'] = job
+            item['job_issue'] = 'job51'
+            yield Request(job, callback=self.parse_job, headers=self.headers,meta={'item':item})
         next_url = response.xpath('//li[@class="bk"][2]/a/@href').extract()
         if next_url:
             yield Request(next_url[0], headers=self.headers)
 
     def parse_job(self, response):
-        item = JobItem()
+        item = response.meta['item']
         item['job_name'] = response.xpath('//div[@class="cn"]/h1/text()').extract()[0]
         item['job_exp'] = response.xpath('//div[@class="t1"]/span[1]/text()').extract()[0]
         item['company_name'] = response.xpath('//p[@class="cname"]/a/@href').extract()[0]
         item['company_welfare'] = response.xpath('//p[@class="t2"]/span/text()').extract()
         item['job_pay'] = response.xpath('//div[@class="cn"]/strong/text()').extract()[0]
         item['job_workplace'] = response.xpath('//span[@class="lname"]/text()').extract()[0]
-        item['job_min_edu'] = None
-        item['job_dec'] = response.xpath('//div[@class="bmsg job_msg inbox"]/p/text()').extract()
-        item['company_size'] = None
-        item['company_ind'] = None
+        item['job_min_edu'] = response.xpath('//div[@class="t1"]/span/text()').extract()[1]
+        decs = response.xpath('//div[@class="bmsg job_msg inbox"]/text()').extract()
+        dec = ''
+        for i in decs:
+            dec = dec + i
+
+        item['job_dec'] = dec
+        l =  response.xpath('//p[@class="msg ltype"]/text()').extract()[0]
+        result = re.sub(r'[\t|\r|\n|\xa0]', '', l)
+        result = re.split('      ', result)
+        item['company_size'] = result[1].strip()
+        item['company_ind'] = result[2].strip()
         yield item

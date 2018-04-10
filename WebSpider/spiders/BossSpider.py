@@ -24,9 +24,13 @@ class BossSpider(scrapy.Spider):
     def parse(self, response):
         links = response.xpath('//div[@class="info-primary"]/h3[@class="name"]/a/@href').extract()
         for link in links:
+            item = JobItem()
+            for field in item.fields:
+                item[field] = None
             true_link = 'https://www.zhipin.com' + link
-            print(true_link)
-            yield Request(true_link, callback=self.parse_job, headers=self.headers)
+            item['job_url'] = true_link
+            item['job_issue'] = 'boss'
+            yield Request(true_link, callback=self.parse_job, headers=self.headers,meta={'item':item})
 
         next_url = response.xpath('//a[@class="next"]/@href').extract()
         if next_url:
@@ -35,8 +39,7 @@ class BossSpider(scrapy.Spider):
 
     def parse_job(self, response):
         try:
-            item = JobItem()
-
+            item = response.meta['item']
             item['job_name'] = response.xpath('//div[@class="name"]/h1/text()').extract()[0]
             # 某一列数据，包含三个
             l = response.xpath('//*[@id="main"]/div[1]/div/div/div[2]/p/text()').extract()

@@ -11,7 +11,10 @@ class LiepinSpider(scrapy.Spider):
     name = "liepin"
     allowed_domains = ["www.liepin.com"]
     start_urls = [
-        'https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=hadoop']
+        'https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=大数据']
+
+    # def start_requests(self):
+    #
 
     def parse(self, response):
         cards = response.xpath('//div[@class="sojob-item-main clearfix"]')
@@ -21,6 +24,8 @@ class LiepinSpider(scrapy.Spider):
             for field in item.fields:
                 item[field] = None
             link = card.xpath('.//h3/a/@href').extract()[0]
+            item['job_url'] = link
+            item['job_issue'] = 'liepin'
             item['company_ind'] = card.xpath('.//a[@class="industry-link"]/text()').extract()[0]
             yield Request(link, meta={'item': item}, callback=self.parse_job)
 
@@ -28,7 +33,7 @@ class LiepinSpider(scrapy.Spider):
         item = response.meta['item']
         item['job_name'] = response.xpath('//div[@class="title-info"]/h1/text()').extract()[0]
         job_pay = response.xpath('//p[@class="job-item-title"]/text()').extract()[0]
-        job_pay = re.findall('(\d+-\d+万).*',job_pay)
+        job_pay = re.findall('(\d+-\d+万).*', job_pay)
         if len(job_pay) == 0:
             job_pay = '面议'
             item['job_pay'] = job_pay

@@ -19,10 +19,5 @@ class JobItem(scrapy.Item):
     company_name = scrapy.Field()  # 公司名称
     company_ind = scrapy.Field()  # 公司行业
     company_size = scrapy.Field()  # 公司规模
-
-
-class CnblogItem(scrapy.Item):
-    title = scrapy.Field()
-    poster = scrapy.Field
-    pubtime = scrapy.Field()
-    content = scrapy.Field()
+    job_url = scrapy.Field()  # 工作详情页链接
+    job_issue = scrapy.Field()  # 工作来源 zlzp、51job等
