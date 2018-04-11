@@ -18,16 +18,26 @@ class LiepinSpider(scrapy.Spider):
 
     def parse(self, response):
         cards = response.xpath('//div[@class="sojob-item-main clearfix"]')
+        i = 0
         for card in cards:
+            i = i + 1
             item = JobItem()
             # 初始化item
             for field in item.fields:
                 item[field] = None
             link = card.xpath('.//h3/a/@href').extract()[0]
             item['job_url'] = link
+            if not re.findall('https', link):
+                # 舍弃无用连接
+                continue
             item['job_issue'] = 'liepin'
             item['company_ind'] = card.xpath('.//a[@class="industry-link"]/text()').extract()[0]
             yield Request(link, meta={'item': item}, callback=self.parse_job)
+
+        next_url = response.xpath('//div[@class="pagerbar"]/a/@href').extract()[-2]
+        if not re.findall('javascript:;', next_url):
+            next_url = 'https://www.liepin.com' + next_url
+            yield Request(url=next_url)
 
     def parse_job(self, response):
         item = response.meta['item']

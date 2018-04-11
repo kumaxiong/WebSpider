@@ -5,7 +5,7 @@ from scrapy.spiders import Spider
 from scrapy import Request
 
 from WebSpider.items import JobItem
-
+import WebSpider.pipelines as pl
 
 class NeituiSpider(Spider):
     name = 'neitui'
@@ -55,6 +55,7 @@ class NeituiSpider(Spider):
         l = response.xpath('//div[@class="font16 mt10 mb10"]/span/text()').extract()
         if len(l) == 4:
             item['job_workplace'] = response.xpath('//div[@class="font16 mt10 mb10"]/span/text()').extract()[-1]
+
         desc_temps = response.xpath('//div[@class="mb20 jobdetailcon"]/text()').extract()
         desc = ''
         for i in desc_temps:
