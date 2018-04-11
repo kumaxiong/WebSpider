@@ -18,7 +18,8 @@ class JobPipeline(object):
 
     def process_item(self, item, spider):
         print(item)
-        sql = "insert into job (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url, job_issue) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+
+        sql = "insert into job (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url,job_issue) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         # 执行sql语句
         self.cursor.execute(sql, (item['job_name'], item['job_pay'], item['job_workplace'], item['job_dec'],
                                   item['job_min_edu'], item['job_exp'], item['company_welfare'],
@@ -119,6 +120,47 @@ class JobPrePipeline(object):
             else:
                 item['job_exp'] = 0
 
+        if spider.name == 'job51':
+            # 计算工资
+            pay = item['job_pay']
+            result = re.findall('(\d+\.?\d*)-(\d+)万/年', pay)
+            if result:
+                r = (float(result[0][0]) + float(result[0][1])) / 12 * 10000
+                r = r / 2
+                item['job_pay'] = int(r)
+            elif re.findall('(\d+\.?\d*)-(\d+\.?\d*)万/月', pay):
+                result = re.findall('(\d+\.?\d*)-(\d+\.?\d*)万/月', pay)
+                r = (float(result[0][0]) + float(result[0][1])) * 10000
+                r = r / 2
+                item['job_pay'] = int(r)
+            elif re.findall('(\d+\.?\d*)-(\d+\.?\d*)千/月', pay):
+                result = re.findall('(\d+\.?\d*)-(\d+\.?\d*)千/月', pay)
+                r = (float(result[0][0]) + float(result[0][1]))
+                r = r / 2
+                item['job_pay'] = int(r)
+            elif re.findall('(\d+)元/天', pay):
+                result = re.findall('(\d+)元/天', pay)
+                r = float(result[0]) * 20
+                item['job_pay'] = int(r)
+
+            # 计算工作经验
+            exp = item['job_exp']
+            result = re.findall('(\d+)年工作经验', exp)
+            if result:
+                f = float(result[0])
+                item['job_exp'] = int(f)
+            elif re.findall('(\d+)-(\d+)年经验', exp):
+                result = re.findall('(\d+)-(\d+)年经验', exp)
+                f = int(result[0][0]) + int(result[0][1])
+                f = f / 2
+                item['job_exp'] = int(f)
+            elif re.findall('(\d+)年以上经验', exp):
+                result = re.findall('(\d+)年以上经验', exp)
+                f = float(result[0])
+                item['job_exp'] = int(f)
+            else:
+                item['job_exp'] = 0
+            # 计算最低学历
         sql = "insert into job_pre (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url, job_issue) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         # 执行sql语句
         self.cursor.execute(sql, (item['job_name'], item['job_pay'], item['job_workplace'], item['job_dec'],
@@ -153,11 +195,11 @@ class JobPrePipeline(object):
 
 
 def get_edu(edu):
-    edus = ['不限', '中技', '中专' '大专', '本科', '硕士', '博士', ]
+    edus = ['不限', '中技', '中专', '高中', '大专', '本科', '硕士', '博士', ]
     try:
         a = edus.index(edu)
     except ValueError:
-        print(233)
+        print(edu)
         a = 0
     return a
 

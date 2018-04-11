@@ -8,6 +8,7 @@ from WebSpider.items import JobItem
 
 class Job51Spider(Spider):
     name = 'job51'
+    allowed_domains = ["search.51job.com", "jobs.51job.com"]
 
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36',
@@ -20,22 +21,38 @@ class Job51Spider(Spider):
     def parse(self, response):
         jobs = response.xpath("//div[@class='el']/p/span/a/@href").extract()
         for job in jobs:
+
+            # 初始化item
             item = JobItem()
             for field in item.fields:
                 item[field] = None
-            item['job_url'] = job
+
             item['job_issue'] = 'job51'
-            yield Request(job, callback=self.parse_job, headers=self.headers,meta={'item':item})
+            item['job_url'] = str(job)
+
+            # 过滤公司总页
+            flag = re.findall('https://jobs.51job.com/all/',job)
+            if flag:
+                continue
+            yield Request(job, callback=self.parse_job, headers=self.headers, meta={'item': item})
+
+        # 翻页
         next_url = response.xpath('//li[@class="bk"][2]/a/@href').extract()
         if next_url:
+            print(next_url)
             yield Request(next_url[0], headers=self.headers)
 
     def parse_job(self, response):
         item = response.meta['item']
         item['job_name'] = response.xpath('//div[@class="cn"]/h1/text()').extract()[0]
         item['job_exp'] = response.xpath('//div[@class="t1"]/span[1]/text()').extract()[0]
-        item['company_name'] = response.xpath('//p[@class="cname"]/a/@href').extract()[0]
-        item['company_welfare'] = response.xpath('//p[@class="t2"]/span/text()').extract()
+        item['company_name'] = response.xpath('//p[@class="cname"]/a/text()').extract()[0]
+
+        welfares = response.xpath('//p[@class="t2"]/span/text()').extract()
+        company_welfare = ''
+        for i in welfares:
+            company_welfare = company_welfare + i + ','
+        item['company_welfare'] = company_welfare
         item['job_pay'] = response.xpath('//div[@class="cn"]/strong/text()').extract()[0]
         item['job_workplace'] = response.xpath('//span[@class="lname"]/text()').extract()[0]
         item['job_min_edu'] = response.xpath('//div[@class="t1"]/span/text()').extract()[1]
@@ -45,9 +62,9 @@ class Job51Spider(Spider):
             dec = dec + i
 
         item['job_dec'] = dec
-        l =  response.xpath('//p[@class="msg ltype"]/text()').extract()[0]
+        l = response.xpath('//p[@class="msg ltype"]/text()').extract()[0]
         result = re.sub(r'[\t|\r|\n|\xa0]', '', l)
         result = re.split('      ', result)
         item['company_size'] = result[1].strip()
-        item['company_ind'] = result[2].strip()
+        item['company_ind'] = result[3].strip()
         yield item
