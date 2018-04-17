@@ -21,3 +21,5 @@ class JobItem(scrapy.Item):
     company_size = scrapy.Field()  # 公司规模
     job_url = scrapy.Field()  # 工作详情页链接
     job_issue = scrapy.Field()  # 工作来源 zlzp、51job等
+    job_class = scrapy.Field()  # 工作分类，随机森林给出的分类结果
+    job_show_name = scrapy.Field()  # 工作展示名

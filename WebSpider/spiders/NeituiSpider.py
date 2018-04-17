@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import re
 from scrapy.spiders import Spider
 from scrapy import Request
 
@@ -56,11 +56,9 @@ class NeituiSpider(Spider):
         if len(l) == 4:
             item['job_workplace'] = response.xpath('//div[@class="font16 mt10 mb10"]/span/text()').extract()[-1]
 
-        desc_temps = response.xpath('//div[@class="mb20 jobdetailcon"]/text()').extract()
-        desc = ''
-        for i in desc_temps:
-            desc = desc + i
-
-        item['job_dec'] = desc
+        desc = response.xpath('//div[@class="mb20 jobdetailcon"]').xpath('string(.)').extract()[0]
+        result = re.sub(r'[\t|\n|\r|\xa0]', '', desc)
+        result = re.sub(r'[ *]', '', result)
+        item['job_dec'] = result
         print(item['job_name'])
         yield item

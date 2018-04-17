@@ -51,11 +51,10 @@ class BossSpider(scrapy.Spider):
             item['job_workplace'] = re.split(r'：+', l[0])[1]
             item['job_min_edu'] = re.split(r'：+', l[2])[1]
             # 工作描述
-            temps_desc = response.xpath('//div[@class="text"]')[0].xpath('./text()').extract()
-            temp_desc = ''
-            for i in temps_desc:
-                temp_desc += i
-            item['job_dec'] = temp_desc
+            desc = response.xpath('//div[@class="text"]')[0].xpath('string(.)').extract()[0]
+            result = re.sub(r'[\t|\n|\r|\xa0]', '', desc)
+            result = re.sub(r'[ *]', '', result)
+            item['job_dec'] = result
             item['company_size'] = response.xpath('//*[@id="main"]/div[1]/div/div/div[3]/p[1]/text()[2]').extract()[0]
             item['company_ind'] = response.xpath('//a[@ka="job-detail-brandindustry"]/text()').extract()[0]
             yield item

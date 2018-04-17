@@ -3,9 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a45f5e61-5d25-4635-bfcd-b456ae605724" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d6baad60-d041-436c-9626-fab26533ad86.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/items.py" afterPath="$PROJECT_DIR$/WebSpider/items.py" />
       <change beforePath="$PROJECT_DIR$/WebSpider/pipelines.py" afterPath="$PROJECT_DIR$/WebSpider/pipelines.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/settings.py" afterPath="$PROJECT_DIR$/WebSpider/settings.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py" afterPath="$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py" afterPath="$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py" afterPath="$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py" afterPath="$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py" afterPath="$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spiders/BossSpider.py" afterPath="$PROJECT_DIR$/WebSpider/spiders/BossSpider.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py" afterPath="$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py" />
       <change beforePath="$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py" afterPath="$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py" />
+      <change beforePath="$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py" afterPath="$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py" />
       <change beforePath="$PROJECT_DIR$/WebSpider/spiders/liepin.py" afterPath="$PROJECT_DIR$/WebSpider/spiders/liepin.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,17 +29,18 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/WebSpider$pipelines.coverage" NAME="pipelines Coverage Results" MODIFIED="1523147748153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider" />
-    <SUITE FILE_PATH="coverage/WebSpider$run.coverage" NAME="run Coverage Results" MODIFIED="1523374642621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider" />
-    <SUITE FILE_PATH="coverage/WebSpider$crawl_boss.coverage" NAME="crawl_boss Coverage Results" MODIFIED="1523427678386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
     <SUITE FILE_PATH="coverage/WebSpider$Learn_requests.coverage" NAME="Learn_requests Coverage Results" MODIFIED="1521252297824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Scripts/Requests" />
-    <SUITE FILE_PATH="coverage/WebSpider$crawl_zlzp.coverage" NAME="crawl_zlzp Coverage Results" MODIFIED="1523430344517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
-    <SUITE FILE_PATH="coverage/WebSpider$crawl_neitui.coverage" NAME="crawl_neitui Coverage Results" MODIFIED="1523415093571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
+    <SUITE FILE_PATH="coverage/WebSpider$crawl_zlzp.coverage" NAME="crawl_zlzp Coverage Results" MODIFIED="1523859369443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
+    <SUITE FILE_PATH="coverage/WebSpider$crawl_neitui.coverage" NAME="crawl_neitui Coverage Results" MODIFIED="1523673550627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
+    <SUITE FILE_PATH="coverage/WebSpider$crawl_liepin.coverage" NAME="crawl_liepin Coverage Results" MODIFIED="1523673548174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
+    <SUITE FILE_PATH="coverage/WebSpider$middlewares.coverage" NAME="middlewares Coverage Results" MODIFIED="1523150547734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider" />
+    <SUITE FILE_PATH="coverage/WebSpider$run.coverage" NAME="run Coverage Results" MODIFIED="1523374642621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider" />
+    <SUITE FILE_PATH="coverage/WebSpider$crawl_boss.coverage" NAME="crawl_boss Coverage Results" MODIFIED="1523673565149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
     <SUITE FILE_PATH="coverage/WebSpider$NovelSpider.coverage" NAME="NovelSpider Coverage Results" MODIFIED="1521274804895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spiders" />
     <SUITE FILE_PATH="coverage/WebSpider$liepin.coverage" NAME="liepin Coverage Results" MODIFIED="1523416356761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spiders" />
-    <SUITE FILE_PATH="coverage/WebSpider$crawl_liepin.coverage" NAME="crawl_liepin Coverage Results" MODIFIED="1523426139082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
-    <SUITE FILE_PATH="coverage/WebSpider$crawl_job51.coverage" NAME="crawl_job51 Coverage Results" MODIFIED="1523414018032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
+    <SUITE FILE_PATH="coverage/WebSpider$ZLZPSpider.coverage" NAME="ZLZPSpider Coverage Results" MODIFIED="1523460797497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spiders" />
+    <SUITE FILE_PATH="coverage/WebSpider$crawl_job51.coverage" NAME="crawl_job51 Coverage Results" MODIFIED="1523673544334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider/spider_run" />
     <SUITE FILE_PATH="coverage/WebSpider$Learn_mongo.coverage" NAME="Learn_mongo Coverage Results" MODIFIED="1521252314026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Scripts/MongoDB" />
-    <SUITE FILE_PATH="coverage/WebSpider$middlewares.coverage" NAME="middlewares Coverage Results" MODIFIED="1523150547734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebSpider" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -43,37 +56,27 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mydatabase: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="mydatabase: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="job: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="liepin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSpider/spiders/liepin.py">
+      <file leaf-file-name="NeituiSpider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding>
-                <element signature="e#430#1327#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="1566">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSpider/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,9 +84,21 @@
       <file leaf-file-name="ZLZPSpider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="1943">
+              <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="71" selection-end-column="48" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liepin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSpider/spiders/liepin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1073">
+              <caret line="63" column="27" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+              <folding>
+                <element signature="e#430#1327#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,96 +106,59 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebSpider/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="4785">
+              <caret line="616" column="12" lean-forward="false" selection-start-line="616" selection-start-column="12" selection-end-line="616" selection-end-column="12" />
               <folding>
-                <element signature="e#192#201#0" expanded="true" />
-                <element signature="e#3664#4274#0" expanded="false" />
-                <element signature="e#4323#4854#0" expanded="false" />
-                <element signature="e#4902#6592#0" expanded="false" />
-                <element signature="e#5773#5892#0" expanded="false" />
-                <element signature="e#6039#6100#0" expanded="false" />
-                <element signature="e#6169#6336#0" expanded="false" />
-                <element signature="e#6401#6517#0" expanded="false" />
-                <element signature="e#9041#13638#0" expanded="false" />
-                <marker date="1523430225141" expanded="true" signature="494:528" ph="SELECT compa... job" />
-                <marker date="1523430225141" expanded="true" signature="494:532" ph="SELECT compa... job" />
-                <marker date="1523430225141" expanded="true" signature="494:559" ph="SELECT compa... job" />
-                <marker date="1523430225141" expanded="true" signature="715:751" ph="SELECT * FRO... job" />
-                <marker date="1523430225141" expanded="true" signature="1059:1251" ph="insert into job... " />
-                <marker date="1523430225141" expanded="true" signature="7393:7590" ph="insert into job_pre... " />
+                <element signature="e#3955#4565#0" expanded="false" />
+                <element signature="e#4614#5145#0" expanded="false" />
+                <element signature="e#5193#7257#0" expanded="false" />
+                <element signature="e#7304#8042#0" expanded="false" />
+                <element signature="e#8341#8790#0" expanded="false" />
+                <element signature="e#9814#14411#0" expanded="false" />
+                <marker date="1523860650121" expanded="true" signature="494:559" ph="SELECT compa... job" />
+                <marker date="1523860650121" expanded="true" signature="715:751" ph="SELECT * FRO... job" />
+                <marker date="1523860650121" expanded="true" signature="1115:1337" ph="insert into job... " />
+                <marker date="1523860650121" expanded="true" signature="8058:8287" ph="insert into job_pre... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSpider/settings.py">
+      <file leaf-file-name="crawl_neitui.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="145">
-              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="job" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job">
+      <file leaf-file-name="crawl_zlzp.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crawl_liepin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="job_pre" pinned="false" current-in-tab="false">
+        <entry file="das://table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.job_pre">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="normal.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/normal.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BossSpider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSpider/spiders/BossSpider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console_1.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console_1.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSpider/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NeituiSpider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="e#48#81#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -198,6 +176,7 @@
     <findStrings>
       <find>company_size</find>
       <find>job</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,27 +202,30 @@
         <option value="src:table:/cec6505a/c141850e-711c-466a-918b-f10329ef4bc9/mydatabase.doubanrank" />
         <option value="src:table:/cec6505a/2af8fec7-8762-472a-acf2-7940a2a24818/mydatabase.job" />
         <option value="$PROJECT_DIR$/WebSpider/spiders/neitui.py" />
-        <option value="$PROJECT_DIR$/WebSpider/items.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8ac65985-aed1-411b-809c-557b63fb0bdf/console.sql" />
-        <option value="$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py" />
         <option value="$PROJECT_DIR$/WebSpider/job_utils/cacu_pay.py" />
-        <option value="$PROJECT_DIR$/WebSpider/spiders/BossSpider.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console.sql" />
         <option value="$PROJECT_DIR$/WebSpider/run.py" />
-        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py" />
-        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py" />
-        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/distinct.sql" />
+        <option value="$PROJECT_DIR$/WebSpider/settings.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/normal.sql" />
+        <option value="$PROJECT_DIR$/WebSpider/items.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spiders/liepin.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spider_run/zlzp.log" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/55059b43-9d27-4a7a-bf8c-b476e0577932/console_1.sql" />
+        <option value="$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spiders/BossSpider.py" />
         <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py" />
         <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console_2.sql" />
-        <option value="$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console_1.sql" />
-        <option value="$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/distinct.sql" />
-        <option value="$PROJECT_DIR$/WebSpider/spiders/liepin.py" />
-        <option value="$PROJECT_DIR$/WebSpider/settings.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py" />
+        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/55059b43-9d27-4a7a-bf8c-b476e0577932/console.sql" />
+        <option value="$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py" />
         <option value="$PROJECT_DIR$/WebSpider/pipelines.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/normal.sql" />
       </list>
     </option>
   </component>
@@ -253,11 +235,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="25" />
-    <option name="y" value="154" />
-    <option name="width" value="1060" />
-    <option name="height" value="866" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="253" />
+    <option name="y" value="63" />
+    <option name="width" value="1392" />
+    <option name="height" value="908" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -271,23 +253,12 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WebSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="Scratches">
         <subPane>
@@ -318,13 +289,41 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WebSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="spider_run" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebSpider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="WebSpider" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;Amazon Redshift" />
   </component>
   <component name="RecentsManager">
@@ -359,6 +358,25 @@
       <module name="WebSpider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="crawl_job51" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebSpider/spider_run" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebSpider" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -421,39 +439,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="liepin" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebSpider/spiders" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WebSpider" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebSpider/spiders/liepin.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.crawl_neitui" />
-      <item index="1" class="java.lang.String" itemvalue="Python.crawl_liepin" />
-      <item index="2" class="java.lang.String" itemvalue="Python.liepin" />
-      <item index="3" class="java.lang.String" itemvalue="Python.crawl_boss" />
-      <item index="4" class="java.lang.String" itemvalue="Python.crawl_zlzp" />
+      <item index="0" class="java.lang.String" itemvalue="Python.crawl_liepin" />
+      <item index="1" class="java.lang.String" itemvalue="Python.crawl_zlzp" />
+      <item index="2" class="java.lang.String" itemvalue="Python.crawl_neitui" />
+      <item index="3" class="java.lang.String" itemvalue="Python.crawl_job51" />
+      <item index="4" class="java.lang.String" itemvalue="Python.crawl_boss" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.crawl_zlzp" />
         <item index="1" class="java.lang.String" itemvalue="Python.crawl_boss" />
-        <item index="2" class="java.lang.String" itemvalue="Python.crawl_liepin" />
-        <item index="3" class="java.lang.String" itemvalue="Python.liepin" />
-        <item index="4" class="java.lang.String" itemvalue="Python.crawl_neitui" />
+        <item index="2" class="java.lang.String" itemvalue="Python.crawl_neitui" />
+        <item index="3" class="java.lang.String" itemvalue="Python.crawl_liepin" />
+        <item index="4" class="java.lang.String" itemvalue="Python.crawl_job51" />
       </list>
     </recent_temporary>
   </component>
@@ -483,19 +482,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="25" y="154" width="1060" height="866" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80906147" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66618705" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" x="17" y="616" width="1920" height="586" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62459546" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" x="17" y="616" width="1920" height="586" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33656958" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3149946" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22585838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34088457" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60194176" sideWeight="0.4967811" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39148074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16845493" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.57403654" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21566524" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32886267" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946351" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56418556" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -504,9 +504,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8426052" sideWeight="0.4967811" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="SQL Generator" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.79719526" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SQL Generator" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.79719526" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -521,29 +521,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebSpider/spiders/liepin.py</url>
-          <line>72</line>
+          <line>71</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/WebSpider/pipelines.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py</url>
-          <line>68</line>
+          <line>65</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WebSpider/pipelines.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="45" />
+          <line>80</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="46" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -561,58 +556,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/linkSpider.py" />
-    <entry file="das://table:/cec6505a/c141850e-711c-466a-918b-f10329ef4bc9/mydatabase.doubanrank" />
-    <entry file="file://D:/Anaconda3/Lib/site-packages/scrapy/utils/trackref.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cec6505a/c141850e-711c-466a-918b-f10329ef4bc9/mydatabase.job" />
-    <entry file="file://D:/Anaconda3/Lib/site-packages/scrapy/http/request/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Anaconda3/Lib/site-packages/scrapy/spidermiddlewares/offsite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2af8fec7-8762-472a-acf2-7940a2a24818/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://src:table:/cec6505a/2af8fec7-8762-472a-acf2-7940a2a24818/mydatabase.job" />
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-2036615904/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="4657" column="6" lean-forward="false" selection-start-line="4657" selection-start-column="6" selection-end-line="4657" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cec6505a/2af8fec7-8762-472a-acf2-7940a2a24818/mydatabase.job" />
-    <entry file="das://table:/cec6505a/2af8fec7-8762-472a-acf2-7940a2a24818/mydatabase.doubanrank" />
-    <entry file="das://table:/cec6505a/2af8fec7-8762-472a-acf2-7940a2a24818/mydatabase.ioc" />
-    <entry file="das://src:table:/cec6505a/8ac65985-aed1-411b-809c-557b63fb0bdf/mydatabase.job" />
-    <entry file="file://D:/Anaconda3/Lib/site-packages/parsel/selector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/neitui.py" />
-    <entry file="das://table:/cec6505a/8ac65985-aed1-411b-809c-557b63fb0bdf/mydatabase.report" />
     <entry file="file://D:/Anaconda3/Lib/site-packages/scrapy/utils/defer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2842">
@@ -656,13 +599,6 @@
       </provider>
     </entry>
     <entry file="das://table:/cec6505a/8ac65985-aed1-411b-809c-557b63fb0bdf/mydatabase.job" />
-    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.ioc">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -705,123 +641,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.report">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/liepin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="e#430#1327#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/BossSpider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/distinct.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,61 +652,207 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py">
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.report" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.ioc" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/normal.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="29">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#192#201#0" expanded="true" />
-            <element signature="e#3664#4274#0" expanded="false" />
-            <element signature="e#4323#4854#0" expanded="false" />
-            <element signature="e#4902#6592#0" expanded="false" />
-            <element signature="e#5773#5892#0" expanded="false" />
-            <element signature="e#6039#6100#0" expanded="false" />
-            <element signature="e#6169#6336#0" expanded="false" />
-            <element signature="e#6401#6517#0" expanded="false" />
-            <element signature="e#9041#13638#0" expanded="false" />
-            <marker date="1523430225141" expanded="true" signature="494:528" ph="SELECT compa... job" />
-            <marker date="1523430225141" expanded="true" signature="494:532" ph="SELECT compa... job" />
-            <marker date="1523430225141" expanded="true" signature="494:559" ph="SELECT compa... job" />
-            <marker date="1523430225141" expanded="true" signature="715:751" ph="SELECT * FRO... job" />
-            <marker date="1523430225141" expanded="true" signature="1059:1251" ph="insert into job... " />
-            <marker date="1523430225141" expanded="true" signature="7393:7590" ph="insert into job_pre... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSpider/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job">
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job" />
+    <entry file="das://table:/cec6505a/d6baad60-d041-436c-9626-fab26533ad86/mydatabase.job_pre" />
+    <entry file="das://table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.report">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d6baad60-d041-436c-9626-fab26533ad86/normal.sql">
+    <entry file="file://$PROJECT_DIR$/234.log" />
+    <entry file="file://$PROJECT_DIR$/233.log" />
+    <entry file="das://src:table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.job">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-251">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.ioc">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="94" column="20" lean-forward="false" selection-start-line="94" selection-start-column="20" selection-end-line="105" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55059b43-9d27-4a7a-bf8c-b476e0577932/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/Job51Spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-451">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/BossSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_job51.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_boss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/zlzp.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="778" column="0" lean-forward="true" selection-start-line="778" selection-start-column="0" selection-end-line="778" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/boss.log" />
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_neitui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_liepin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/liepin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="63" column="27" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
+          <folding>
+            <element signature="e#430#1327#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/ZLZPSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1943">
+          <caret line="70" column="12" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="71" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.job">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/55059b43-9d27-4a7a-bf8c-b476e0577932/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spiders/NeituiSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="60" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cec6505a/55059b43-9d27-4a7a-bf8c-b476e0577932/mydatabase.job_pre">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4785">
+          <caret line="616" column="12" lean-forward="false" selection-start-line="616" selection-start-column="12" selection-end-line="616" selection-end-column="12" />
+          <folding>
+            <element signature="e#3955#4565#0" expanded="false" />
+            <element signature="e#4614#5145#0" expanded="false" />
+            <element signature="e#5193#7257#0" expanded="false" />
+            <element signature="e#7304#8042#0" expanded="false" />
+            <element signature="e#8341#8790#0" expanded="false" />
+            <element signature="e#9814#14411#0" expanded="false" />
+            <marker date="1523860650121" expanded="true" signature="494:559" ph="SELECT compa... job" />
+            <marker date="1523860650121" expanded="true" signature="715:751" ph="SELECT * FRO... job" />
+            <marker date="1523860650121" expanded="true" signature="1115:1337" ph="insert into job... " />
+            <marker date="1523860650121" expanded="true" signature="8058:8287" ph="insert into job_pre... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSpider/spider_run/crawl_zlzp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding />
         </state>
       </provider>

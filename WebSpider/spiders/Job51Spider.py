@@ -39,7 +39,6 @@ class Job51Spider(Spider):
         # 翻页
         next_url = response.xpath('//li[@class="bk"][2]/a/@href').extract()
         if next_url:
-            print(next_url)
             yield Request(next_url[0], headers=self.headers)
 
     def parse_job(self, response):
@@ -56,12 +55,10 @@ class Job51Spider(Spider):
         item['job_pay'] = response.xpath('//div[@class="cn"]/strong/text()').extract()[0]
         item['job_workplace'] = response.xpath('//span[@class="lname"]/text()').extract()[0]
         item['job_min_edu'] = response.xpath('//div[@class="t1"]/span/text()').extract()[1]
-        decs = response.xpath('//div[@class="bmsg job_msg inbox"]/text()').extract()
-        dec = ''
-        for i in decs:
-            dec = dec + i
-
-        item['job_dec'] = dec
+        desc = response.xpath('//div[@class="bmsg job_msg inbox"]').xpath('string(.)').extract()[0]
+        result = re.sub(r'[\t|\n|\r|\xa0]', '', desc)
+        result = re.sub(r'[ *]', '', result)
+        item['job_dec'] = result
         l = response.xpath('//p[@class="msg ltype"]/text()').extract()[0]
         result = re.sub(r'[\t|\r|\n|\xa0]', '', l)
         result = re.split('      ', result)

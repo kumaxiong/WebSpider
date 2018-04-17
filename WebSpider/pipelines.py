@@ -24,17 +24,19 @@ class JobPipeline(object):
         result = self.cursor.fetchall()
         result2 = self.cursor.execute('SELECT * FROM job WHERE job_url = %s', (item['job_url']))
         if result2:
-            raise DropItem('you have crawled one in ',item['job_url'])
-        elif result and result[0][1] != str(spider.name):
-            raise DropItem('company has crawled in ', result[0]['job_issue'], 'but now ' + spider.name)
+            raise DropItem('you have crawled one in ', item['job_url'])
+        # elif result and result[0][1] != str(spider.name):
+        #     raise DropItem('company has crawled in ', result[0][0], result[0][1], 'but now ' + spider.name)
         else:
-            sql = "insert into job (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url,job_issue) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+            print('craweled', item['job_url'])
+            sql = "insert into job (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url,job_issue,job_class,job_show_name) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             # 执行sql语句
             self.cursor.execute(sql, (item['job_name'], item['job_pay'], item['job_workplace'], item['job_dec'],
                                       item['job_min_edu'], item['job_exp'], item['company_welfare'],
                                       item['company_name'],
                                       item['company_ind'], item['company_size'],
-                                      item['job_url'], item['job_issue']))
+                                      item['job_url'], item['job_issue'],
+                                      item['job_class'], item['job_show_name']))
             return item
 
     @classmethod
@@ -70,12 +72,14 @@ class JobPrePipeline(object):
 
     def process_item(self, item, spider):
 
-        print(item)
         # 计算学历
         item['job_min_edu'] = get_edu(item['job_min_edu'])
         # 计算工作地点
         item['job_workplace'] = get_zone(item['job_workplace'])
 
+        # 处理公司规模
+        item['company_size'] = get_company_size(item['company_size'])
+        print('company_size = %s' % item['company_size'])
         if spider.name == "zlzp":
             pay = item['job_pay']
             result = re.findall('(\d+)-(\d+)元', pay)
@@ -151,6 +155,14 @@ class JobPrePipeline(object):
                 result = re.findall('(\d+)元/天', pay)
                 r = float(result[0]) * 20
                 item['job_pay'] = int(r)
+            elif re.findall('(\d+)千.*', pay):
+                result = re.findall('(\d+)千.*', pay)
+                r = float(result[0]) * 1000
+                item['job_pay'] = int(r)
+            elif re.findall('(\d+)万.*', pay):
+                result = re.findall('(\d+)万.*', pay)
+                r = float(result[0]) * 10000 / 12
+                item['job_pay'] = int(r)
 
             # 计算工作经验
             exp = item['job_exp']
@@ -191,13 +203,14 @@ class JobPrePipeline(object):
                 item['job_exp'] = r
             else:
                 item['job_exp'] = 0
-        sql = "insert into job_pre (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url, job_issue) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        sql = "insert into job_pre (job_name,job_pay,job_workplace,job_dec,job_min_edu,job_exp,company_welfare,company_name,company_ind,company_size,job_url, job_issue, job_class, job_show_name) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
         # 执行sql语句
         self.cursor.execute(sql, (item['job_name'], item['job_pay'], item['job_workplace'], item['job_dec'],
                                   item['job_min_edu'], item['job_exp'], item['company_welfare'],
                                   item['company_name'],
                                   item['company_ind'], item['company_size'],
-                                  item['job_url'], item['job_issue']))
+                                  item['job_url'], item['job_issue'],
+                                  item['job_class'], item['job_show_name']))
         return item
 
     @classmethod
@@ -583,3 +596,22 @@ def get_zone(zone_name):
         return int(result[0])
     else:
         return -1
+
+
+def get_company_size(size):
+    if size == None:
+        return 0
+    result = re.findall('(\d+)-(\d+)人', size)
+    r = 0
+    if result:
+        r = int(result[0][0]) + int(result[0][1])
+        r = r / 2
+    elif re.findall('少于(\d+)人', size):
+        result = re.findall('少于(\d+)人', size)
+        r = int(result[0])
+    elif re.findall('(\d+).*?', size):
+        result = re.findall('(\d+).*?', size)
+        r = int(result[0])
+    else:
+        r = 0
+    return r

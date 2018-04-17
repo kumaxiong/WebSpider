@@ -62,12 +62,11 @@ class LiepinSpider(scrapy.Spider):
 
         item['company_welfare'] = wel
         item['company_name'] = response.xpath('//div[@class="title-info"]/h3/a/text()').extract()[0]
-        desc = ''
-        temp_descs = response.xpath('//div[@class="job-item main-message job-description"]/div/text()').extract()
-        for i in temp_descs:
-            desc = desc + i
 
-        item['job_dec'] = desc
+        desc = response.xpath('//div[@class="job-item main-message job-description"]').xpath('string(.)').extract()[0]
+        result = re.sub(r'[\t|\n|\r|\xa0]', '', desc)
+        result = re.sub(r'[ *]', '', result)
+        item['job_dec'] = result
 
         item['job_workplace'] = response.xpath('//p[@class="basic-infor"]/span/a/text()').extract()[0]
         yield item

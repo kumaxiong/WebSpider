@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import re
 import scrapy
 from WebSpider.items import JobItem
 from scrapy import Request
@@ -11,7 +12,6 @@ class JobSpider(scrapy.Spider):
     }
 
     allowed_domains = ["sou.zhaopin.com", "jobs.zhaopin.com"]
-
     def start_requests(self):
         keys = ['大数据', 'hadoop', 'spark']
         for key in keys:
@@ -67,14 +67,18 @@ class JobSpider(scrapy.Spider):
             item['job_min_edu'] = response.xpath(
                 '//ul[@class="terminal-ul clearfix"]/li[6]/strong/text()'
             ).extract()[0]
-            desc_list = response.xpath('//div[@class="tab-inner-cont"][1]/p/text()').extract()
-            if len(desc_list) > 0:
-                desc = ''
-                for i in desc_list:
-                    desc += i
-                item['job_dec'] = desc
-            elif len(desc_list) == 0:
-                item['job_dec'] = None
+            desc = response.xpath('//div[@class="tab-inner-cont"]')[0].xpath('string(.)').extract()[0]
+            result = re.sub(r'[\t|\n|\r|\xa0]', '', desc)
+            result = re.sub(r'[ *]', '', result)
+            result = re.sub('工作地址.*', '', result)
+            item['job_dec'] = result
+            # if len(desc_list) > 0:
+            #     desc = ''
+            #     for i in desc_list:
+            #         desc += i
+            #     item['job_dec'] = desc
+            # elif len(desc_list) == 0:
+            #     item['job_dec'] = None
 
             # todo: 公司介绍没法完全匹配
             item['company_size'] = response.xpath(
