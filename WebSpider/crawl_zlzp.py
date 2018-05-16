@@ -3,5 +3,5 @@
 from scrapy import cmdline
 
 name = 'zlzp'
-cmd = 'scrapy crawl {0} --logfile=zlzp.log'.format(name)
+cmd = 'scrapy crawl {0}'.format(name)
 cmdline.execute(cmd.split())

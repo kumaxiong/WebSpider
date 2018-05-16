@@ -23,7 +23,7 @@ FEED_EXPORT_ENCODING = 'utf-8'
 
 ITEM_PIPELINES = {
     'WebSpider.pipelines.JobPipeline': 300,
-    'WebSpider.pipelines.JobPrePipeline': 301,
+    # 'WebSpider.pipelines.JobPrePipeline': 301,
 }
 
 

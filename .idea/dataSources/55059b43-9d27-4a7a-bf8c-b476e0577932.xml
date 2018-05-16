@@ -1232,7 +1232,7 @@
     </column>
     <column id="289" parent="232" name="company_size">
       <Position>11</Position>
-      <DataType>text|0</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="290" parent="232" name="job_url">

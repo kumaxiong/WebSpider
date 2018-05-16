@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Define your item pipelines here
@@ -5,9 +6,20 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import re
-
+import codecs
 import pymysql
 from scrapy.exceptions import DropItem
+import pickle
+import pandas as pd
+import jieba.posseg
+import re
+from gensim.models.doc2vec import Doc2Vec
+
+
+def PrintLoadInfo(s):
+    print(" ==== ")
+    print(s)
+    print(" ==== ")
 
 
 class JobPipeline(object):
@@ -69,14 +81,76 @@ class JobPrePipeline(object):
 
     def __init__(self, settings):
         self.settings = settings
+        # == init == Global
+        # 加载岗位要求特征词
+        self.dec_keyword = []
+        read = open("model/word/dec-answer.txt", "r")
+        for word in read.readlines():
+            self.dec_keyword.append(word.strip())
+            jieba.add_word(word.strip())
+        read.close()
+        PrintLoadInfo("加载岗位要求特征词完毕")
+
+        # 加载字典特征矩阵
+        self.Dec = {}
+        for word in self.dec_keyword:
+            self.Dec[word] = [0]
+        PrintLoadInfo("加载岗位要求字典特征矩阵完毕")
+
+        # 加载岗位名称特征词
+        read = open("model/word/name-answer.txt", "r")
+        self.name_keyword = []
+        for word in read.readlines():
+            self.name_keyword.append(word.strip())
+            jieba.add_word(word.strip())
+        read.close()
+        PrintLoadInfo("加载岗位名称特征词完毕")
+
+        # 加载字典特征矩阵
+        self.Name = {}
+        for word in self.name_keyword:
+            self.Name[word.strip()] = [0]
+        PrintLoadInfo("加载岗位名称字典特征矩阵完毕")
+
+        # 加载岗位名称聚类名称
+        self.ClassName = []
+        read = open("model/word/name-class.txt", "r", encoding="utf8")
+        for w in read.readlines():
+            self.ClassName.append(w.strip())
+        read.close()
+        PrintLoadInfo("加载岗位名称聚类名称完毕")
+
+        # 加载Doc2Vec模型
+        self.DocModel = Doc2Vec.load("model/model/DCname")
+        PrintLoadInfo("加载Doc2Vec模型完毕")
+
+        # 加载岗位名称RandomForestClassifier模型
+        read = open("model/model/RFCname.pkl", "rb")
+        self.NameRFCModel = pickle.load(read)
+        read.close()
+        PrintLoadInfo("加载岗位名称RandomForestClassifier模型完毕")
+
+        # 加载岗位要求RandomForestClassifier模型
+        read = open("model/model/randomForest.pkl", "rb")
+        self.RFCModel = pickle.load(read)
+        read.close()
+        PrintLoadInfo("加载岗位名称RandomForestClassifier模型完毕")
+
+        # =====
 
     def process_item(self, item, spider):
 
+        s = self.DealInitData(item['job_name'], item['job_dec'])
+        print(s['flag'], s['name'], s['decword'])
+        if s['flag'] == False:
+            raise DropItem('hsuifhaih')
+        item['job_show_name'] = s['name']
+        item['job_dec'] = s['decword']
+        item['job_class'] = s['class']
         # 计算学历
         item['job_min_edu'] = get_edu(item['job_min_edu'])
         # 计算工作地点
         item['job_workplace'] = get_zone(item['job_workplace'])
-
         # 处理公司规模
         item['company_size'] = get_company_size(item['company_size'])
         print('company_size = %s' % item['company_size'])
@@ -98,8 +172,7 @@ class JobPrePipeline(object):
                 item['job_exp'] = 0
             elif re.findall('(\d+)年.*', exp):
                 result = re.findall('(\d+)年.*', exp)
-                item['job_exp'] = int(result[0][0])
-
+            item['job_exp'] = int(result[0][0])
         if spider.name == 'neitui':
             # 计算工资，工资形式 0k-123k
             pay = item['job_pay']
@@ -163,7 +236,6 @@ class JobPrePipeline(object):
                 result = re.findall('(\d+)万.*', pay)
                 r = float(result[0]) * 10000 / 12
                 item['job_pay'] = int(r)
-
             # 计算工作经验
             exp = item['job_exp']
             result = re.findall('(\d+)年工作经验', exp)
@@ -181,7 +253,7 @@ class JobPrePipeline(object):
                 item['job_exp'] = int(f)
             else:
                 item['job_exp'] = 0
-            # 计算最低学历
+        # 计算最低学历
         if spider.name == 'boss':
             pay = item['job_pay']
             result = re.findall('(\d+)K-(\d+)K', pay)
@@ -191,8 +263,8 @@ class JobPrePipeline(object):
                 item['job_pay'] = int(r)
             else:
                 item['job_pay'] = 0
-            exp = item['job_exp']
-            result = re.findall('(\d+)-(\d+)年', exp)
+                exp = item['job_exp']
+                result = re.findall('(\d+)-(\d+)年', exp)
             if result:
                 r = int(result[0][0]) + int(result[0][1])
                 r = r / 2
@@ -235,6 +307,61 @@ class JobPrePipeline(object):
     def close_spider(self, spider):
         self.cursor.close()
         self.connect.close()
+
+    # =====
+
+    def DealInitData(self, job_name, job_dec):
+        response = {}  # 结果存储
+        response['flag'] = True
+        # == 处理岗位名称聚类 ==
+        cut = re.sub('（.*?）|【.*?】|[a-zA-Z0-9]*[0-9](-|—)|副', '', "".join(job_name))
+        cut = re.sub('(-|—).*', '', cut)
+        name = ""
+        for word in cut:
+            name += word.strip()
+        # print(name)
+        vec = self.Name.copy()
+        cnt = 0
+        seglist = jieba.posseg.cut(name)
+        # print('分词结果:')
+        for seg in seglist:
+            word = "".join(seg.word).strip().lower()
+            if word == 'ai': word = '人工智能'
+            if word == '后台': word = '后端'
+            if word == '分析员': word = '分析师'
+            if word == '美工': word = 'ui'
+            if word == 'nlp': word = '自然语言'
+            if word in self.name_keyword:
+                # tmp.add(word)
+                vec[word] = [1]
+                # print(word)
+                cnt += 1
+        if cnt == 0: response['flag'] = False
+        ans = pd.DataFrame(vec)
+        # train_data = pd.read_csv("G:/x.csv", encoding="ANSI")
+        # print(ans[name_keyword][0:])
+        kind = self.NameRFCModel.predict(ans[self.name_keyword][0:])
+        # kind = alg.predict(train_data[predictors][0:])
+        response['name'] = self.ClassName[kind[0] - 1]
+        # == 处理岗位类别==
+        seglist = jieba.posseg.cut(job_dec)
+        vec = self.Dec.copy()
+        cnt = 0
+        kword = set()
+        for seg in seglist:
+            word = "".join(seg.word).strip().lower()
+            if word in self.dec_keyword:
+                kword.add(word)
+                vec[word] = [1]
+                cnt += 1
+        if cnt == 0: response['flag'] = False
+        response['decword'] = list(kword)
+        ans = pd.DataFrame(vec)
+        kind = self.RFCModel.predict(ans[self.dec_keyword][0:])
+        response['class'] = str(kind[0])
+        return response
+
+    # ====== 上述内容直接复制即可 ============
 
 
 def get_edu(edu):
